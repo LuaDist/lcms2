@@ -1,17 +1,20 @@
-PROJECT(lcms2)
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
-INCLUDE(dist.cmake)
+# Copyright (C) 2007-2012 LuaDist.
+# Created by Peter Drahoš
+# Redistribution and use of this file is allowed according to the terms of the MIT license.
+# For details see the COPYRIGHT file distributed with LuaDist.
 
-INCLUDE_DIRECTORIES (include)
+project ( lcms2 )
+cmake_minimum_required ( VERSION 2.6 )
+include ( cmake/dist.cmake )
+
 
 # LCMS Library
-FILE(GLOB LCMS_SRCS "src/*.c" "src/*.def")
-ADD_LIBRARY(lcms2 SHARED ${LCMS_SRCS})
+include_directories ( include )
+file ( GLOB LCMS_SRCS "src/*.c" "src/*.def" )
+add_library ( lcms2 ${LCMS_SRCS} )
 
 # install
-INSTALL(TARGETS lcms2 RUNTIME DESTINATION ${INSTALL_BIN} LIBRARY DESTINATION ${INSTALL_LIB} ARCHIVE DESTINATION ${INSTALL_LIB})
-INSTALL(FILES include/lcms2.h DESTINATION ${INSTALL_INC})
-INSTALL(DIRECTORY doc DESTINATION ${INSTALL_DOC})
-INSTALL(FILES AUTHORS COPYING ChangeLog NEWS README.1ST DESTINATION ${INSTALL_DOC})
-
-
+install_library ( lcms2 )
+install_header ( include/lcms2.h )
+install_doc ( doc/ )
+install_data ( AUTHORS COPYING ChangeLog NEWS README.1ST )
