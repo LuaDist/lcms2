@@ -1,0 +1,34 @@
+type = "x86_64"
+arch = "Ubuntu"
+author = "Marti Maria"
+desc = "LittleCMS is a CMM, a color management engine"
+name = "lcms2"
+maintainer = "Peter Kapec"
+files = {
+Runtime = {
+[[lib/liblcms2.so]],
+}
+,
+Documentation = {
+[[share/lcms2/doc//LittleCMS2.0 tutorial.pdf]],
+[[share/lcms2/doc//LittleCMS2.0 Plugin API.pdf]],
+[[share/lcms2/doc//LittleCMS2.0 API.pdf]],
+}
+,
+Header = {
+[[include/lcms2.h]],
+}
+,
+Data = {
+[[share/lcms2/AUTHORS]],
+[[share/lcms2/COPYING]],
+[[share/lcms2/ChangeLog]],
+[[share/lcms2/NEWS]],
+[[share/lcms2/README.1ST]],
+}
+,
+}
+
+license = "MIT"
+url = "http://www.littlecms.com"
+version = "2.0a"
